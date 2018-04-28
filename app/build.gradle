@@ -13,22 +13,22 @@ android {
     }
 
 
-    signingConfigs {
-        myConfig {
-            keyAlias properties.getProperty("keyAlias")
-            keyPassword properties.getProperty("keyPassword")
-            storeFile file(properties.getProperty("keystoreFile"))
-            storePassword properties.getProperty("keystorePassword")
-        }
-    }
+//    signingConfigs {
+//        myConfig {
+//            keyAlias properties.getProperty("keyAlias")
+//            keyPassword properties.getProperty("keyPassword")
+//            storeFile file(properties.getProperty("keystoreFile"))
+//            storePassword properties.getProperty("keystorePassword")
+//        }
+//    }
     buildTypes {
         release {
-            signingConfig signingConfigs.myConfig
+//            signingConfig signingConfigs.myConfig
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            signingConfig signingConfigs.myConfig
+//            signingConfig signingConfigs.myConfig
         }
     }
 }
@@ -37,8 +37,9 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.github.sengil:DebugHelper:v1.0'
     //    testImplementation 'junit:junit:4.12'
     //    androidTestImplementation 'com.android.support.test:runner:1.0.2'
     //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    compile project(path: ':debug-helper')
+//    compile project(path: ':debug-helper')
 }
